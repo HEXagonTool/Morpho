@@ -42,7 +42,7 @@ class View {
      *                       - 'wrap': нужно ли оборачивать содержимое в контейнер (по умолчанию true).
      * @return string Содержимое представления (с или без обертки).
      */
-    public function getContent($data = [], $options) {
+    public function getContent($data = [], $options = null) {
         // Буферизация вывода: подключаем файл представления.
         ob_start();
         include($this->getPath());
