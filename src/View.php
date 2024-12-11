@@ -28,7 +28,7 @@ class View {
      */
     public function getPath() {
         if (!file_exists($this->path)) {
-            throw new Exception("Файл представления не найден: " . $this->path);
+            throw new \Exception("Файл представления не найден: " . $this->path);
         }
         return $this->path;
     }
