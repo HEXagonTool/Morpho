@@ -1,5 +1,5 @@
 {
-    "name": "HEXagonTool/Morpho",
+    "name": "hexagon-tool/morpho",
     "description": "Abstraction over PHP include for convenient separation of view into components.",
     "type": "library",
     "license": "MIT",
