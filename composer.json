@@ -1,0 +1,22 @@
+{
+    "name": "HEXagonTool/Morpho",
+    "description": "Abstraction over PHP include for convenient separation of view into components.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HEXagon developer",
+            "email": "h3xagon.tool@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\PackageName\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
