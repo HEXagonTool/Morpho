@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "HEXagonTool\\Morpho\\": "src/"
+            "HEXagonTool\\Morpho\\": "src/HEXagonTool.php"
         }
     },
     "minimum-stability": "stable",
