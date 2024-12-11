@@ -1,6 +1,6 @@
 <?php
 
-namespace Archer16\Morpho;
+namespace HEXagonTool\Morpho;
 
 class TemplateManager {
     // Экземпляр синглтона для ViewCollection
