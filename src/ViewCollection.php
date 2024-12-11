@@ -13,7 +13,7 @@ class ViewCollection {
      * @param string $dir Директория для представлений.
      * @param string $context Контекст.
      */
-    public function __construct($dir, $context) {
+    public function __construct($dir, $context = '') {
         $this->dir = $dir;
         $this->context = $context;
     }
