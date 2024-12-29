@@ -50,7 +50,7 @@ class View {
         $html_content = ob_get_clean();
 
         // Если включена опция обертки, добавляем контейнер.
-        if ($options['wrap']) {
+        if (isset($options['wrap']) && $options['wrap']) {
 
             $wrapperModifiers = $this->getWtapperModifiers($data);
             $html_content = $this->wrapView($html_content, $wrapperModifiers);
@@ -61,9 +61,9 @@ class View {
 
     public function getWtapperModifiers($data){
         
-        if($data['modifiers'] !== null || $data['modifiers']['wrap'] !== null )
+        if (isset($data['modifiers']) && isset($data['modifiers']['wrap'])) {
             return $data['modifiers']['wrap'];
-
+        }
         return '';
     }
 
