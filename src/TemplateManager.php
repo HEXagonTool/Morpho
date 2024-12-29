@@ -1,7 +1,7 @@
 <?php
 
     namespace HEXagonTool\Morpho;
-    ass TemplateManager {
+    class TemplateManager {
         // Экземпляр синглтона для ViewCollection
         private static $viewCollectionInstance = null;
     
