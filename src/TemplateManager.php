@@ -1,8 +1,7 @@
 <?php
 
     namespace HEXagonTool\Morpho;
-
-    class TemplateManager {
+    ass TemplateManager {
         // Экземпляр синглтона для ViewCollection
         private static $viewCollectionInstance = null;
     
@@ -25,14 +24,11 @@
          * Метод синглтона для получения экземпляра ViewCollection.
          * Если экземпляр еще не создан, он будет инициализирован.
          *
-         * @param string $dir Директория для представлений (по умолчанию пустая строка).
-         * @param string $context Контекст (по умолчанию пустая строка).
-         * @return ViewCollection Экземпляр ViewCollection.
          */
-        public static function create($dir = '', $context = '') {
+        public static function create($props = []) {
             if (self::$viewCollectionInstance === null) {
                 // Если экземпляр ViewCollection еще не создан, создаем его.
-                self::$viewCollectionInstance = new ViewCollection($dir, $context);
+                self::$viewCollectionInstance = new ViewCollection($props);
             }
             return self::$viewCollectionInstance;
         }

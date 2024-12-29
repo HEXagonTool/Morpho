@@ -44,16 +44,27 @@ class View {
      */
     public function getContent($data = [], $options = null) {
         // Буферизация вывода: подключаем файл представления.
+        
         ob_start();
         include($this->getPath());
         $html_content = ob_get_clean();
 
         // Если включена опция обертки, добавляем контейнер.
         if ($options['wrap']) {
-            $html_content = $this->wrapView($html_content);
+
+            $wrapperModifiers = $this->getWtapperModifiers($data);
+            $html_content = $this->wrapView($html_content, $wrapperModifiers);
         }
 
         return $html_content;
+    }
+
+    public function getWtapperModifiers($data){
+        
+        if($data['modifiers'] !== null || $data['modifiers']['wrap'] !== null )
+            return $data['modifiers']['wrap'];
+
+        return '';
     }
 
     /**
@@ -63,12 +74,12 @@ class View {
      * @param string $content Содержимое представления.
      * @return string Содержимое представления, обернутое в div с классом.
      */
-    public function wrapView($content) {
+    public function wrapView($content, $wrapperModifiers ) {
         // Создаем CSS-класс на основе имени представления.
         $className = self::createViewClassName($this->viewName);
 
         // Формируем HTML-контейнер.
-        return "<div class=\"component-wrapper $className\">$content</div>";
+        return "<div class=\"component-wrapper $className $wrapperModifiers \">$content</div>";
     }
 
     /**
